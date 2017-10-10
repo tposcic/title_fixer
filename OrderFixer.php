@@ -8,6 +8,15 @@ define('SRT_STATE_TIME',                    1);
 define('SRT_STATE_TEXT',                    2);
 define('SRT_STATE_BLANK',                   3);
 
+/*CREATE FOLDERS IF NONE FOUND*/
+if (!file_exists(INPUT_FOLDER)) {
+    mkdir(INPUT_FOLDER, 0777, true);
+}
+
+if (!file_exists(OUTPUT_FOLDER)) {
+    mkdir(OUTPUT_FOLDER, 0777, true);
+}
+
 /*READ SINGLE SUBTITLE FILE*/
 function read_subtitles($path = NULL){
 
